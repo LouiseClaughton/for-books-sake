@@ -34,10 +34,10 @@ export default async function Dashboard() {
                     <div className="w-full">
                         <div className="bg-white text-black w-full sm:w-[9/12] h-full">
                             <div className="flex flex-col">
-                                <div className="p-8 sm:p-16 relative sm:ml-20">
+                                <div className="p-8 sm:p-16 relative">
                                     <div className="flex flex-col items-center mb-8 py-24">
-                                        <h1 className="text-4xl uppercase">FOR BOOK'S SAKE!</h1>
-                                        <h2 className="text-2xl">you’ve already bought three books this week!</h2>
+                                        <h1 className="text-4xl uppercase text-center md:text-left">FOR BOOK'S SAKE!</h1>
+                                        <h2 className="text-2xl text-center md:text-left">you’ve already bought three books this week!</h2>
                                     </div>
 
                                     <div className="flex flex-col gap-8">
@@ -45,43 +45,43 @@ export default async function Dashboard() {
                                             
                                             {/* In Progress */}
                                             <div className="flex flex-col gap-8 border-b border-gray-400 py-12">
-                                                <h3 className="text-xl">Oh no, the plot, it thickens</h3>
+                                                <h3 className="text-xl text-center md:text-left">Oh no, the plot, it thickens</h3>
                                                 <InProgressBooks books={inProgressBooks}/>
                                             </div>
 
                                             {/* Five Stars */}
                                             <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
-                                                <h3 className="text-xl">What do you mean I can only give it five stars?</h3>
+                                                <h3 className="text-xl text-center md:text-left">What do you mean I can only give it five stars?</h3>
                                                 <Bookshelf books={fiveStarBooks}/>
                                             </div>
 
                                             {/* Four Stars */}
                                             <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
-                                                <h3 className="text-xl">I’ve read better (but this was still pretty good)</h3>
+                                                <h3 className="text-xl text-center md:text-left">I’ve read better (but this was still pretty good)</h3>
                                                 <Bookshelf books={fourStarBooks}/>
                                             </div>
 
                                             {/* Three Stars */}
                                             <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
-                                                <h3 className="text-xl">It was fine, I guess, but nothing to write home about</h3>
+                                                <h3 className="text-xl text-center md:text-left">It was fine, I guess, but nothing to write home about</h3>
                                                 <Bookshelf books={threeStarBooks}/>
                                             </div>
 
                                             {/* Two Stars */}
                                             <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
-                                                <h3 className="text-xl">I finished this just to see how much worse it would get</h3>
+                                                <h3 className="text-xl text-center md:text-left">I finished this just to see how much worse it would get</h3>
                                                 <Bookshelf books={twoStarBooks}/>
                                             </div>
 
                                             {/* One Star */}
                                             <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
-                                                <h3 className="text-xl">I finished it, but I’m not happy about it</h3>
+                                                <h3 className="text-xl text-center md:text-left">I finished it, but I’m not happy about it</h3>
                                                 <Bookshelf books={oneStarBooks}/>
                                             </div>
 
                                             {/* DNF */}
                                             <div className="flex flex-col gap-8 py-16">
-                                                <h3 className="text-xl">It’s not you, it’s me (just kidding, it’s you)</h3>
+                                                <h3 className="text-xl text-center md:text-left">It’s not you, it’s me (just kidding, it’s you)</h3>
                                                 <Bookshelf books={dnfBooks}/>
                                             </div>
                                         </div>
