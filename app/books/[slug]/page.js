@@ -30,9 +30,9 @@ export default async function BookPage({ params }) {
                             {book.author}
                         </div>
 
-                        <div className="flex flex-col gap-8">
+                        <p className="flex flex-col gap-8 whitespace-pre-line">
                             {book.description}
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
