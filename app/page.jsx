@@ -4,6 +4,9 @@ import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import Image from "next/image";
 
+import InProgressBooks from "./components/inProgressBooks";
+import Bookshelf from "./components/bookshelf";
+
 export default async function Dashboard() {
     const supabase = await createClient();
     const [
@@ -13,6 +16,14 @@ export default async function Dashboard() {
     ]);
 
     if (booksError) throw booksError;
+
+    const inProgressBooks = books.filter((book) => book.progress < 100);
+
+    const fiveStarBooks = books.filter((book) => book.rating === 5);
+
+    const completedBooks = books.filter((book) => book.progress === 100);
+
+    const unreadBooks = books.filter((book) => book.progress === 0);
 
     return (
         <div className="h-screen w-full flex">
@@ -29,75 +40,15 @@ export default async function Dashboard() {
 
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col">
-                                            <h3 className="text-xl">Oh no, the plot, it thickens</h3>
-                                            {books
-                                                .filter((item) => item.progress < 100)
-                                                .map((item) => (
-                                                <div
-                                                    key={`${item.title}-${item.id}`}
-                                                    className="w-full h-full border border black rounded-xl flex flex-col gap-4 p-4"
-                                                >
-                                                    {item.image_url && (
-                                                        <div className="h-16 w-16 pt-2 pb-2 flex items-center">
-                                                            <Image
-                                                                src={item.image_url}
-                                                                alt={`${item.title} cover image`}
-                                                                width={64}
-                                                                height={64}
-                                                                className="h-16 w-16 object-cover rounded-md"
-                                                            />
-                                                        </div>
-                                                    )}
-                                                    <h2 className="text-3xl leading-tight min-h-[2.5em] xl:min-h-0">
-                                                        {item.title}
-                                                    </h2>
-                                                    <p className="line-clamp-5 leading-6 h-[7.5rem]">
-                                                        {item.description}
-                                                    </p>
-                                                    <div className="flex flex-row gap-4 w-full justify-between">
-                                                        <Link
-                                                            href={`/books/${item.slug}`}
-                                                            className="bg-black text-white px-3 py-3 rounded-xl w-fit justify-self-end"
-                                                        >
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                            <div className="flex flex-col gap-8 border-b border-gray-400 py-12">
+                                                <h3 className="text-xl">Oh no, the plot, it thickens</h3>
+                                                <InProgressBooks books={inProgressBooks}/>
+                                            </div>
 
-                                            <h3 className="text-xl">What do you mean I can only give it five stars?</h3>
-                                            {books
-                                                .filter((item) => item.rating = 5)
-                                                .map((item) => (
-                                                <div
-                                                    key={`${item.title}-${item.id}`}
-                                                    className="w-full h-full border border black rounded-xl flex flex-col gap-4 p-4"
-                                                >
-                                                    {item.image_url && (
-                                                        <div className="h-16 w-16 pt-2 pb-2 flex items-center">
-                                                            <Image
-                                                                src={item.image_url}
-                                                                alt={`${item.title} cover image`}
-                                                                width={64}
-                                                                height={64}
-                                                                className="h-16 w-16 object-cover rounded-md"
-                                                            />
-                                                        </div>
-                                                    )}
-                                                    <h2 className="text-3xl leading-tight min-h-[2.5em] xl:min-h-0">
-                                                        {item.title}
-                                                    </h2>
-                                                    <p className="line-clamp-5 leading-6 h-[7.5rem]">
-                                                        {item.description}
-                                                    </p>
-                                                    <div className="flex flex-row gap-4 w-full justify-between">
-                                                        <Link
-                                                            href={`/books/${item.slug}`}
-                                                            className="bg-black text-white px-3 py-3 rounded-xl w-fit justify-self-end"
-                                                        >
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                            <div className="flex flex-col gap-8 border-b border-gray-100 py-16">
+                                                <h3 className="text-xl">What do you mean I can only give it five stars?</h3>
+                                                <Bookshelf books={fiveStarBooks}/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
