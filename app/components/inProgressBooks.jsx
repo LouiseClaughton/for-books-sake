@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function InProgressBooks({ books }) {
     return (
-        <div className="grid grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-3 lg:grid-cols-7 gap-8">
             {books.map((book) => (
-                <a href={`/books/${book.slug}`} className="col-span-3 col-span-3 flex gap-4" key={book.id}>
+                <a href={`/books/${book.slug}`} className="col-span-3 flex gap-4" key={book.id}>
                     {book?.cover &&
                         <div className="w-[180px] aspect-[2/3] shrink-0">
                             <Image 

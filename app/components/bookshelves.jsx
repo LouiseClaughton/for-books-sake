@@ -13,11 +13,11 @@ export default function Bookshelves({ books, isDashboard }) {
 
     return (
         isDashboard ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-start">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 items-start">
                 <Bookshelf books={slicedBooks} />
             </div>
         ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-start">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 items-start">
                 {rows.map((row, index) => (
                     <Bookshelf key={index} books={row} />
                 ))}

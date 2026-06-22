@@ -26,7 +26,7 @@ export default function Bookshelf({ books }) {
                 <a
                     key={book.id}
                     href={`/books/${book.slug}`}
-                    className="col-span-2 flex flex-col md:flex-row items-center md:items-start gap-4"
+                    className="col-span-3 flex flex-col md:flex-row items-center md:items-start gap-4"
                 >
                     {image}
 
@@ -48,7 +48,7 @@ export default function Bookshelf({ books }) {
                 <button
                     key={book.id}
                     onClick={() => canSelect ? setSelected(book.id) : router.push(`/books/${book.slug}`)}
-                    className="text-left col-span-1 flex w-full justify-center md:justify-end hover:cursor-pointer lg:hover:-translate-y-2 lg:transition-all"
+                    className="text-left col-span-1 flex w-full justify-center hover:cursor-pointer lg:hover:-translate-y-2 lg:transition-all"
                 >
                     {image}
                 </button>

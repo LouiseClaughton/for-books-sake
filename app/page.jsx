@@ -57,7 +57,7 @@ export default async function Dashboard() {
                                                 <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
                                                     <div className="flex justify-between">
                                                         <h3 className="text-xl text-center md:text-left">What do you mean I can only give it five stars?</h3>
-                                                        <Link href="/books/rating/5-stars"><span className="text-xl">more</span></Link>
+                                                        <Link href="/books/rating/5-stars"><span className="text-xl hover:underline">more</span></Link>
                                                     </div>
                                                     <Bookshelves books={fiveStarBooks} isDashboard={true} />
                                                 </div>
@@ -68,7 +68,7 @@ export default async function Dashboard() {
                                                 <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
                                                     <div className="flex justify-between">
                                                         <h3 className="text-xl text-center md:text-left">A solid read, but I've read better</h3>
-                                                        <Link href="/books/rating/4-stars"><span className="text-xl">more</span></Link>
+                                                        <Link href="/books/rating/4-stars"><span className="text-xl hover:underline">more</span></Link>
                                                     </div>
                                                     <Bookshelves books={fourStarBooks} isDashboard={true} />
                                                 </div>
@@ -79,7 +79,7 @@ export default async function Dashboard() {
                                                 <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
                                                     <div className="flex justify-between">
                                                         <h3 className="text-xl text-center md:text-left">It was fine, I guess, but nothing to write home about</h3>
-                                                        <Link href="/books/rating/3-stars"><span className="text-xl">more</span></Link>
+                                                        <Link href="/books/rating/3-stars"><span className="text-xl hover:underline">more</span></Link>
                                                     </div>
                                                     <Bookshelves books={threeStarBooks} isDashboard={true} />
                                                 </div>
@@ -90,7 +90,7 @@ export default async function Dashboard() {
                                                 <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
                                                     <div className="flex justify-between">
                                                         <h3 className="text-xl text-center md:text-left">I finished this just to see how much worse it would get</h3>
-                                                        <Link href="/books/rating/2-stars"><span className="text-xl">more</span></Link>
+                                                        <Link href="/books/rating/2-stars"><span className="text-xl hover:underline">more</span></Link>
                                                     </div>
                                                     <Bookshelves books={twoStarBooks} isDashboard={true} />
                                                 </div>
@@ -101,7 +101,7 @@ export default async function Dashboard() {
                                                 <div className="flex flex-col gap-8 border-b border-gray-400 py-16">
                                                     <div className="flex justify-between">
                                                         <h3 className="text-xl text-center md:text-left">I finished it, but I’m not happy about it</h3>
-                                                        <Link href="/books/rating/1-stars"><span className="text-xl">more</span></Link>
+                                                        <Link href="/books/rating/1-stars"><span className="text-xl hover:underline">more</span></Link>
                                                     </div>
                                                     <Bookshelves books={oneStarBooks} isDashboard={true} />
                                                 </div>

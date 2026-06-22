@@ -21,18 +21,24 @@ export default async function BookPage({ params }) {
         <div className="w-full">
             <div className="bg-white text-black w-full sm:w-[9/12] h-full pt-28 sm:pt-0">
                 <div className="flex flex-col">
-                    <div className="p-8 sm:p-16 relative">
-                        <div className="flex justify-between items-center mb-4">
-                            <h1 className="text-5xl">{book.title}</h1>
+                    <div className="p-8 sm:p-16 relative grid grid-cols-[1fr_3fr] gap-12">
+                        <div className="aspect-[2/3] shrink-0">
+                            <img
+                                src={book.cover}
+                                alt={book.title}
+                                className="w-full h-full object-cover bg-gray-200 lg:hover:-translate-y-2 lg:transition-all"
+                            />
                         </div>
+                        <div className="flex flex-col mb-4">
+                            <h1 className="book-title text-4xl">{book.title}</h1>
+                            <div className="book-title text-xl mb-4">
+                                {book.author}
+                            </div>
 
-                        <div className="mb-4">
-                            {book.author}
+                            <p className="text-sm flex flex-col gap-8 whitespace-pre-line">
+                                {book.description}
+                            </p>
                         </div>
-
-                        <p className="flex flex-col gap-8 whitespace-pre-line">
-                            {book.description}
-                        </p>
                     </div>
                 </div>
             </div>

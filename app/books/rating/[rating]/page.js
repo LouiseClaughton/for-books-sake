@@ -27,7 +27,6 @@ export default async function BooksByRatingPage({ params }) {
                             <div className="p-8 sm:p-16 relative">
                                 <div className="flex flex-col items-center mb-8 py-24">
                                     <h1 className="text-4xl uppercase text-center md:text-left">{numericRating} STAR BOOKS</h1>
-                                    <h2 className="text-2xl text-center md:text-left">you’ve already bought three books this week!</h2>
                                 </div>
 
                                 <div className="flex flex-col gap-8">
